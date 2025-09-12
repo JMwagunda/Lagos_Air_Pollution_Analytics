@@ -1,0 +1,72 @@
+# Lagos Air Pollution Analysis Project Configuration
+
+# Data paths
+data:
+  raw:
+    file1: "data/raw/lagos_air_pollution_health_data1.csv"
+    file2: "data/raw/lagos_air_pollution_health_data2.csv"
+  processed:
+    cleaned: "data/processed/cleaned_data.parquet"
+    engineered: "data/processed/pollution_index_data.parquet"
+  external:
+    # Path for any external data sources
+
+# Output paths
+outputs:
+  figures: "outputs/figures/"
+  models: "outputs/models/"
+  reports: "outputs/reports/"
+
+# Model parameters
+modeling:
+  test_size: 0.2
+  random_state: 42
+  cross_validation_folds: 3
+  
+  # Random Forest parameters
+  random_forest:
+    n_estimators: 50
+    max_depth: 10
+    min_samples_split: 5
+    
+  # Gradient Boosting parameters
+  gradient_boosting:
+    n_estimators: 50
+    max_depth: 6
+    learning_rate: 0.1
+
+# Visualization parameters
+visualization:
+  figure_size: [15, 10]
+  dpi: 300
+  color_palette: "viridis"
+
+# Analysis parameters
+analysis:
+  pollution_weight:
+    pm2_5: 0.3
+    pm10: 0.25
+    no2: 0.2
+    so2: 0.15
+    o3: 0.1
+    
+  pm2_5_categories:
+    - [0, 15, "Good"]
+    - [15, 30, "Moderate"]
+    - [30, 55, "Unhealthy for Sensitive"]
+    - [55, 110, "Unhealthy"]
+    - [110, "inf", "Very Unhealthy"]
+    
+  seasons:
+    12: "Dry"
+    1: "Dry"
+    2: "Dry"
+    3: "Dry"
+    4: "Wet"
+    5: "Wet"
+    6: "Wet"
+    7: "Wet"
+    8: "Wet"
+    9: "Wet"
+    10: "Dry"
+    11: "Dry"
