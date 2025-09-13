@@ -12,6 +12,7 @@ scikit-learn>=1.0.0
 
 # Statistical analysis
 scipy>=1.7.0
+statsmodels>=0.14.4
 
 # Utilities
 jupyter>=1.0.0
