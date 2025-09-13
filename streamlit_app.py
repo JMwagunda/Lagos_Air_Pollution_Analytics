@@ -474,7 +474,7 @@ if st.session_state.get('data_loaded', False):
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)'
                 )
-                st.plotly_chart(fig_trends, width="content")
+                st.plotly_chart(fig_trends, width="stretch")
             
             with col2:
                 # Current pollution levels
@@ -530,7 +530,7 @@ if st.session_state.get('data_loaded', False):
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)'
             )
-            st.plotly_chart(fig_scatter, width="content")
+            st.plotly_chart(fig_scatter, width="stretch")
         
         # Tab 2: Correlation Analysis
         with tab2:
@@ -561,7 +561,7 @@ if st.session_state.get('data_loaded', False):
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)'
                 )
-                st.plotly_chart(fig_heatmap, width="content")
+                st.plotly_chart(fig_heatmap, width="stretch")
             
             with col2:
                 # Key correlations
@@ -627,7 +627,7 @@ if st.session_state.get('data_loaded', False):
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)'
                 )
-                st.plotly_chart(fig_seasonal, width="content")
+                st.plotly_chart(fig_seasonal, width="stretch")
             
             with col2:
                 # Harmattan analysis
@@ -653,7 +653,7 @@ if st.session_state.get('data_loaded', False):
                         })
                 
                 comparison_df = pd.DataFrame(metrics_comparison)
-                st.dataframe(comparison_df.round(2), width="content")
+                st.dataframe(comparison_df.round(2), width="stretch")
             
             # Monthly patterns
             st.markdown("#### 📅 Monthly Pollution Patterns")
@@ -676,7 +676,7 @@ if st.session_state.get('data_loaded', False):
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)'
             )
-            st.plotly_chart(fig_monthly, width="content")
+            st.plotly_chart(fig_monthly, width="stretch")
         
         # Tab 4: Model Insights
         with tab4:
@@ -697,7 +697,7 @@ if st.session_state.get('data_loaded', False):
                     'Training Time (s)': [2.3, 3.1, 0.5]
                 })
                 
-                st.dataframe(model_results.round(3), width="content")
+                st.dataframe(model_results.round(3), width="stretch")
                 
                 # Feature importance
                 st.markdown("#### 🎯 Feature Importance")
@@ -737,7 +737,7 @@ if st.session_state.get('data_loaded', False):
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)'
                 )
-                st.plotly_chart(fig_importance, width="content")
+                st.plotly_chart(fig_importance, width="stretch")
             
             with col2:
                 # Model insights
@@ -773,7 +773,7 @@ if st.session_state.get('data_loaded', False):
                         })
                 
                 performance_df = pd.DataFrame(city_performance)
-                st.dataframe(performance_df.round(3), width="content")
+                st.dataframe(performance_df.round(3), width="stretch")
         
         # Tab 5: Hypothesis Testing
         with tab5:
@@ -804,7 +804,7 @@ if st.session_state.get('data_loaded', False):
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)'
                 )
-                st.plotly_chart(fig_h1, width="content")
+                st.plotly_chart(fig_h1, width="stretch")
             
             with col2:
                 # Test results
@@ -853,7 +853,7 @@ if st.session_state.get('data_loaded', False):
                         plot_bgcolor='rgba(0,0,0,0)',
                         paper_bgcolor='rgba(0,0,0,0)'
                     )
-                    st.plotly_chart(fig_h2, width="content")
+                    st.plotly_chart(fig_h2, width="stretch")
                 
                 with col2:
                     corr_coef = filtered_df['industrial_activity_index'].corr(filtered_df['pollution_index'])
@@ -883,7 +883,7 @@ if st.session_state.get('data_loaded', False):
             harmattan_comparison.columns = ['PM10 Mean', 'PM10 Std', 'Cases Mean', 'Cases Std']
             harmattan_comparison.index = ['Non-Harmattan', 'Harmattan']
             
-            st.dataframe(harmattan_comparison, width="content")
+            st.dataframe(harmattan_comparison, width="stretch")
             
             # T-test results
             st.markdown("#### 📈 Statistical Test Results")
@@ -912,7 +912,7 @@ if st.session_state.get('data_loaded', False):
                           'SUPPORTED' if p_val_cases < 0.05 else 'NOT SUPPORTED']
             })
             
-            st.dataframe(test_results.round(4), width="content")
+            st.dataframe(test_results.round(4), width="stretch")
     
     else:
         st.warning("⚠️ No data available with the selected filters. Please adjust your filter criteria.")
